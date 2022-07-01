@@ -8,11 +8,10 @@ import {
   IonTabButton,
   IonTabs,
 } from "@ionic/react";
-import { search, map, checkmarkDone, logInSharp } from "ionicons/icons";
+import { search, map, checkmarkDone} from "ionicons/icons";
 import HomeTab from "../HomeTab/HomeTab";
 import SearchTab from "../SearchTab/SearchTab";
 import ConfirmTab from "../ConfirmTab/ConfirmTab";
-import Login from "../LoginTab/Login";
 
 // import Tab1Detail from './Tab1Detail';
 
