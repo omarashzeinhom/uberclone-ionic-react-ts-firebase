@@ -1,5 +1,6 @@
 import {
   IonButton,
+  IonCardSubtitle,
   IonCol,
   IonContent,
   IonGrid,
@@ -50,18 +51,18 @@ const Login = () => {
               <IonCol size="12">
                 <IonImg
                   className="login__icon"
-                  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"
+                  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1656556783/UBERCLONE%20APP/Black_Gold_Luxury_Jewelry_Logo_uerwjw.png"
                 />
               </IonCol>
               <IonCol size="12">
                 <IonImg
                   src={
-                    "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1656174907/FIXITAPP/ionic-app-images/Login%20and%20get%20started/undraw_under_construction_-46-pa_1_zkz0vc.svg"
+                    "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1656556781/UBERCLONE%20APP/undraw_electric_car_b-7-hl_uiuqju.svg"
                   }
                   class="login__svg"
                 />
               </IonCol>
-
+              <IonCol size="12">
               <IonButton
                 color={"success"}
                 expand={"block"}
@@ -69,15 +70,11 @@ const Login = () => {
               >
                 Sign in with Google
               </IonButton>
-
-              <IonCol size="6">
-                <IonRouterLink href="/forgotpassword">
-                  Forgot Password ?
-                </IonRouterLink>
               </IonCol>
-              <IonCol size="6">
-                <IonRouterLink href="/register">Register account</IonRouterLink>
-              </IonCol>
+          
+      <IonCardSubtitle>
+       @ Made By Omar Zeinhom 2022
+      </IonCardSubtitle>
             </IonRow>
           </IonGrid>
         </IonHeader>
