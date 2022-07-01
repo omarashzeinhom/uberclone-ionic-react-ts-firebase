@@ -29,7 +29,6 @@ const RideSelector: React.FC<MapsProps> = ({
     const dropoffdrive = `${dropOffCoordinates[0]},${dropOffCoordinates[1]}`;
     const access_token = `?access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g`;
     const apidirections = `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupdrive};${dropoffdrive}${access_token}`;
-    //console.log(`${htt}`)
 
     //get trip time from map box api
     //2pickup coordinates and 2 points for the dropoff location [x]
@@ -39,6 +38,8 @@ const RideSelector: React.FC<MapsProps> = ({
         setTripTime(data.routes[0].duration / 100);
       });
     //these are added to the dependency array to show the setTripTime dont remove or it will not be shown
+ console.log(tripTime);
+  
   }, [pickupCoordinates, dropOffCoordinates]);
 
   return (
