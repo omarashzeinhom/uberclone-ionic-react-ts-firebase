@@ -83,8 +83,8 @@ const ConfirmTab: React.FC<MapsProps> = () => {
         });
     };
     //console.log(pickUp, dropoff);
- getPickUpCoordinates();
- getDropOffCoordinates();
+    getPickUpCoordinates();
+    getDropOffCoordinates();
   }, [pickUp, dropoff]);
 
   return (
