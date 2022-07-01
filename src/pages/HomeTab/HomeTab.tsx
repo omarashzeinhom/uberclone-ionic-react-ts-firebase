@@ -21,14 +21,13 @@ import "./HomeTab.scss";
 //Components
 import Map from "../../components/Map/Map";
 //Custom function useRouter like next js
-import { useRouter } from "../../utilities/useRouter/useRouter";
 
 //React
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 
 //FireBase
-import { onAuthStateChanged, signOut, User } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 //FireBase File in root folder
 import { auth } from "../../Firebase";
 
@@ -43,24 +42,23 @@ interface MapsProps {
 
 const HomeTab: React.FC<MapsProps> = () => {
   const [user, setUser] = useState<any | null>(null);
-
+  const history = useHistory();
   console.log(user);
   console.log(setUser);
 
   useEffect(() => {
     return onAuthStateChanged(auth, (user) => {
       if (user != null) {
-        //history.push('/');
         setUser({
           name: user.displayName,
           photoUrl: user.photoURL,
         });
-      } else {
+      } else if (!user) {
         setUser(null);
-        //history.push("/login");
+        history.push("/login");
       }
     });
-  }, []);
+  }, [history]);
 
   return (
     <IonPage>
@@ -84,14 +82,10 @@ const HomeTab: React.FC<MapsProps> = () => {
                 <IonCard color={"light"}>
                   <IonCardContent>
                     <IonCardSubtitle class="ion-text-center">
-                      Worker
+                      Ride
                     </IonCardSubtitle>
                     <IonAvatar slot="end">
-                      {/**{user && user.phototUrl} */}
-                      <IonImg
-                        src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg"
-                        onClick={() => signOut(auth)}
-                      />
+                      <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1656550658/UBERCLONE%20APP/car-svgrepo-com_oojscg.svg" />
                     </IonAvatar>
                   </IonCardContent>
                 </IonCard>
@@ -103,7 +97,7 @@ const HomeTab: React.FC<MapsProps> = () => {
                 <IonCard color={"light"}>
                   <IonCardContent>
                     <IonCardSubtitle class="ion-text-center">
-                      Profession
+                      Type
                     </IonCardSubtitle>
                     <IonAvatar>
                       <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
@@ -143,13 +137,11 @@ const HomeTab: React.FC<MapsProps> = () => {
         <IonGrid size-sm>
           <IonRow>
             <IonCol size="6">
-              <IonCard color={"light"} >
+              <IonCard color={"light"}>
                 <IonCardContent>
-                <IonCardTitle>
-                  WUBER CLONE APP
-                  </IonCardTitle>
+                  <IonCardTitle>WUBER CLONE APP</IonCardTitle>
                   <IonCardSubtitle>
-                     By Omar Ashraf Zeinhom Abdelrahman
+                    By Omar Ashraf Zeinhom Abdelrahman
                   </IonCardSubtitle>
                   <IonImg
                     src={
@@ -158,7 +150,6 @@ const HomeTab: React.FC<MapsProps> = () => {
                     className="fixit__header__logo"
                     slot="start"
                   />
-                 
                 </IonCardContent>
               </IonCard>
             </IonCol>
@@ -171,6 +162,7 @@ const HomeTab: React.FC<MapsProps> = () => {
                   </IonCardSubtitle>
 
                   <IonAvatar>
+                    {/**{user && user.phototUrl} */}
                     <IonImg
                       src={user && user.photoUrl}
                       className="fixit__header__avatar"

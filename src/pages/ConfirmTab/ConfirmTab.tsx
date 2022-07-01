@@ -14,9 +14,11 @@ import {
 import "./ConfirmTab.scss";
 import Map from "../../components/Map/Map";
 import { useEffect, useState } from "react";
+import RideSelector from "../../components/RideSelector/RideSelector.";
 //
 //import { useRouter } from "../../utilities/useRouter/useRouter";
-import WorkerSelector from "../../components/WorkerSelector/WorkerSelector";
+
+
 
 interface MapsProps {
   name: string;
@@ -125,7 +127,7 @@ const ConfirmTab: React.FC<MapsProps> = () => {
           <IonText>
             <h2>Confirm Worker</h2>
           </IonText>
-          <WorkerSelector 
+          <RideSelector 
           dropOffCoordinates={dropOffCoordinates}
           pickupCoordinates={pickupCoordinates}
           />

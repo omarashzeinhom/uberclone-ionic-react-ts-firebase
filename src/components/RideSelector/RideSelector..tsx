@@ -7,16 +7,16 @@ import {
   IonText,
 } from "@ionic/react";
 import React, { useState, useEffect } from "react";
-import "./WorkerSelector.scss";
+import "./RideSelector.scss";
 // Fake api data to test out functionality for now
-import workerList from "../../data/workerList";
+import rideList from "../../data/rideList";
 
 interface MapsProps {
   pickupCoordinates: number[];
   dropOffCoordinates: number[];
 }
 
-const WorkerSelector: React.FC<MapsProps> = ({
+const RideSelector: React.FC<MapsProps> = ({
   pickupCoordinates,
   dropOffCoordinates,
 }) => {
@@ -43,17 +43,17 @@ const WorkerSelector: React.FC<MapsProps> = ({
 
   return (
     <IonList>
-      {workerList.map((worker, index) => (
+      {rideList.map((ride, index) => (
         <IonItem key={index}>
           <IonAvatar slot="start">
-            <IonImg src={worker.imgUrl} />
+            <IonImg src={ride.imgUrl} />
           </IonAvatar>
           <IonText slot="start">
-            <p>{worker.service}</p>
+            <p>{ride.service}</p>
             <small className="worker__time">15 mins away</small>
           </IonText>
           <IonText slot="end">
-            <p> {"$" + (tripTime * worker.multiplier).toFixed(2)}</p>
+            <p> {"$" + (tripTime * ride.multiplier).toFixed(2)}</p>
           </IonText>
         </IonItem>
       ))}
@@ -63,4 +63,4 @@ const WorkerSelector: React.FC<MapsProps> = ({
   );
 };
 
-export default WorkerSelector;
+export default RideSelector;
