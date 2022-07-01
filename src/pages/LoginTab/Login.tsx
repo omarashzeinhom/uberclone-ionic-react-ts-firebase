@@ -7,7 +7,6 @@ import {
   IonHeader,
   IonImg,
   IonPage,
-  IonRouterLink,
   IonRow,
   IonTitle,
   IonToolbar,
@@ -16,7 +15,7 @@ import React, { useEffect } from "react";
 import "./Login.scss";
 //Custom use router
 //Sign with popup imported directly from firebase auth
-import { signInWithPopup, onAuthStateChanged, getAuth } from "firebase/auth";
+import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
 //from Firebase.tsx file in root folder
 import { auth, provider } from "../../Firebase";
 import { useHistory } from "react-router";

@@ -158,13 +158,13 @@ const HomeTab: React.FC<MapsProps> = () => {
               <IonCard color={"light"}>
                 <IonCardContent>
                   <IonCardSubtitle class="ion-text-center">
-                    {user && user.name}
+                    {user && user?.name}
                   </IonCardSubtitle>
 
                   <IonAvatar>
                     {/**{user && user.phototUrl} */}
                     <IonImg
-                      src={user && user.photoUrl}
+                      src={user && user?.photoUrl}
                       className="fixit__header__avatar"
                     />
                   </IonAvatar>

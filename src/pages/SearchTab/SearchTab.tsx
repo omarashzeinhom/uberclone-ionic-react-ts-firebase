@@ -67,7 +67,7 @@ const SearchTab: React.FC<MapsProps> = (/*props*/) => {
       return (
         <Link to={location}>
           <IonButton expand="block" color={"dark"}>
-            Confirm worker reservation
+            Confirm ride reservation
           </IonButton>
         </Link>
       );
