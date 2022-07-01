@@ -11,7 +11,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import "./Login.scss";
 //Custom use router
 //Sign with popup imported directly from firebase auth
