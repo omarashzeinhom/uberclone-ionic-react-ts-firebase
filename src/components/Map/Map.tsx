@@ -26,8 +26,8 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
       container: "map",
       style:
         "mapbox://styles/omarashzeinhom98/cl4k5xuzh002h14mtoho5qips?optimize=true",
-      center: [31.239661,30.056156],
-     zoom: 15
+      center: [31.239661, 30.056156],
+      zoom: 15,
     });
     if (props.pickupCoordinates) {
       addToMap(map, props.pickupCoordinates);
@@ -51,13 +51,11 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
     })
       .setLngLat(coordinates)
       .addTo(map);
-      console.log(marker);
-
+    console.log(marker);
   };
 
   // Pick Up & Drop Off Coordinates useEffect Displays props
   useEffect(() => {
-    
     /*debug code */
     //console.log(props);
     //console.log(props.pickupCoordinates);
@@ -68,9 +66,9 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
 
   return (
     <div
-      className="container__map" 
+      className="container__map"
       /*important id for map container */ id="map"
-      /** */ 
+      /** */
     >
       <strong>{name}</strong>
     </div>
