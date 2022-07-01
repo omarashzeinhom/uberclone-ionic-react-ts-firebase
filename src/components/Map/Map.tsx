@@ -51,10 +51,13 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
     })
       .setLngLat(coordinates)
       .addTo(map);
+      console.log(marker);
+
   };
 
   // Pick Up & Drop Off Coordinates useEffect Displays props
   useEffect(() => {
+    
     /*debug code */
     //console.log(props);
     //console.log(props.pickupCoordinates);
