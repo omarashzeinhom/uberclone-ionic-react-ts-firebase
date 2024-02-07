@@ -30,6 +30,7 @@ import { useHistory } from "react-router";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 //FireBase File in root folder
 import { auth } from "../../Firebase";
+import { goldTool, logo, threeDCar, threeDClock } from "../../utilities/useRouter/constants";
 
 interface MapsProps {
   pickupCoordinates: number[];
@@ -85,7 +86,7 @@ const HomeTab: React.FC<MapsProps> = () => {
                       Ride
                     </IonCardSubtitle>
                     <IonAvatar slot="end">
-                      <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1656550658/UBERCLONE%20APP/car-svgrepo-com_oojscg.svg" />
+                      <IonImg src={threeDCar} />
                     </IonAvatar>
                   </IonCardContent>
                 </IonCard>
@@ -100,7 +101,8 @@ const HomeTab: React.FC<MapsProps> = () => {
                       Type
                     </IonCardSubtitle>
                     <IonAvatar>
-                      <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
+                      <IonImg src={goldTool}
+                      />
                     </IonAvatar>
                   </IonCardContent>
                 </IonCard>
@@ -114,7 +116,7 @@ const HomeTab: React.FC<MapsProps> = () => {
                       Reserve
                     </IonCardSubtitle>
                     <IonAvatar class="ion-text-center">
-                      <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
+                      <IonImg src={threeDClock} />
                     </IonAvatar>
                   </IonCardContent>
                 </IonCard>
@@ -145,7 +147,7 @@ const HomeTab: React.FC<MapsProps> = () => {
                   </IonCardSubtitle>
                   <IonImg
                     src={
-                      "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1656556781/UBERCLONE%20APP/undraw_electric_car_b-7-hl_uiuqju.svg"
+                      threeDCar
                     }
                     className="fixit__header__logo"
                     slot="start"
