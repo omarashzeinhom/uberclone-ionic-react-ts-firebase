@@ -52,6 +52,9 @@ const Map: React.FC<MapsProps> = (props) => {
           })
             .setLngLat(coordinates)
             .addTo(map);
+            //DEBUG
+            console.log(`Marker --->>${marker}`)
+
         };
 
         // Add markers for pickup and dropoff coordinates
