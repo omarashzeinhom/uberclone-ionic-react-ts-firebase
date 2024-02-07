@@ -10,6 +10,7 @@ interface MapsProps {
   name: string;
   pickupCoordinates: number[];
   dropOffCoordinates: number[];
+  onCurrentLocationChange: (location: number[]) => void;
 }
 
 const Map: React.FC<MapsProps> = (props) => {
@@ -20,6 +21,7 @@ const Map: React.FC<MapsProps> = (props) => {
       const position = await Geolocation.getCurrentPosition();
       const { latitude, longitude } = position.coords;
       setCurrentLocation([longitude, latitude]);
+      props.onCurrentLocationChange([longitude, latitude]); // Pass current location to parent component
     } catch (error) {
       console.error("Error getting current location:", error);
     }
@@ -36,8 +38,7 @@ const Map: React.FC<MapsProps> = (props) => {
           style:
             "mapbox://styles/omarashzeinhom98/cl4k5xuzh002h14mtoho5qips?optimize=true",
           center: [longitude, latitude], // Set center to user's current location
-          zoom: 4,
-          //localGeocoder: coordinatesGeocoder,
+          zoom: 1,
           mapboxgl: mapboxgl,
           reverseGeocode: true,
           accessToken: mapboxgl.accessToken,
@@ -83,9 +84,13 @@ const Map: React.FC<MapsProps> = (props) => {
   }, [currentLocation]);
 
   return (
-    <div className="container__map" id="map">
-      <strong>{props?.name}</strong>
-    </div>
+    <>
+      <div className="container__map" id="map">
+        <strong>{props?.name}</strong>
+      </div>
+      
+      <button onClick={getCurrentLocation} style={{fontSize: '2.0rem', textAlign: 'center'}}>📍⚙</button>
+    </>
   );
 };
 

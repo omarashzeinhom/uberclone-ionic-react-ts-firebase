@@ -30,7 +30,7 @@ import { useHistory } from "react-router";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 //FireBase File in root folder
 import { auth } from "../../Firebase";
-import { goldTool, logo, threeDCar, threeDClock } from "../../utilities/useRouter/constants";
+import { goldTool,  threeDCar, threeDClock } from "../../utilities/useRouter/constants";
 
 interface MapsProps {
   pickupCoordinates: number[];
@@ -43,10 +43,15 @@ interface MapsProps {
 
 const HomeTab: React.FC<MapsProps> = () => {
   const [user, setUser] = useState<any | null>(null);
+  const [currentLocation, setCurrentLocation] = useState<number[]>([0, 0]);
   const history = useHistory();
-  console.log(user);
-  console.log(setUser);
+  // DEBUG  
+  // console.log(user);
+  // console.log(setUser);
 
+  const handleCurrentLocationChange = (location: number[]) => {
+    setCurrentLocation(location);
+  };
   useEffect(() => {
     return onAuthStateChanged(auth, (user) => {
       if (user != null) {
@@ -69,10 +74,11 @@ const HomeTab: React.FC<MapsProps> = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <Map
+      <Map
           name={"map"}
           dropOffCoordinates={[31.239661, 30.056156]}
           pickupCoordinates={[31.239661, 30.056156]}
+          onCurrentLocationChange={handleCurrentLocationChange} // Add this prop
         />
         {/**Header */}
 

@@ -22,6 +22,12 @@ interface MapsProps {
 }
 
 const ConfirmTab: React.FC<MapsProps> = () => {
+  const [currentLocation, setCurrentLocation] = useState<number[]>([0, 0]);
+
+  const handleCurrentLocationChange = (location: number[]) => {
+    setCurrentLocation(location);
+  };
+
   //Defined router from utils
   //const router = useRouter();
   // used query here as a string with window & @@params
@@ -104,16 +110,16 @@ const ConfirmTab: React.FC<MapsProps> = () => {
           </IonToolbar>
         </IonHeader>
 
-        <Map
+         <Map
           name={"map"}
           dropOffCoordinates={dropOffCoordinates}
           pickupCoordinates={pickupCoordinates}
+          onCurrentLocationChange={handleCurrentLocationChange} // Add this prop
         />
 
         <IonGrid>
-          {/**Worker Selector */}
           <IonText>
-            <h2>Confirm Worker</h2>
+            <h2>Confirm Ride</h2>
           </IonText>
           <RideSelector
             dropOffCoordinates={dropOffCoordinates}
@@ -121,7 +127,7 @@ const ConfirmTab: React.FC<MapsProps> = () => {
           />
           {/**Confirm Button */}
           <IonButton expand="block" color={"success"}>
-            Confirm Worker Reservation
+          Confirm Ride
           </IonButton>
         </IonGrid>
       </IonContent>
