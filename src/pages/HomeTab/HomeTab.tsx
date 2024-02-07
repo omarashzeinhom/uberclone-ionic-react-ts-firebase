@@ -45,9 +45,11 @@ const HomeTab: React.FC<MapsProps> = () => {
   const [user, setUser] = useState<any | null>(null);
   const [currentLocation, setCurrentLocation] = useState<number[]>([0, 0]);
   const history = useHistory();
+  
   // DEBUG  
   // console.log(user);
   // console.log(setUser);
+  console.log(`currentLocation ---> ${currentLocation}`);
 
   const handleCurrentLocationChange = (location: number[]) => {
     setCurrentLocation(location);

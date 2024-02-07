@@ -27,6 +27,7 @@ const ConfirmTab: React.FC<MapsProps> = () => {
   const handleCurrentLocationChange = (location: number[]) => {
     setCurrentLocation(location);
   };
+  console.log(`currentLocation ---> ${currentLocation}`);
 
   //Defined router from utils
   //const router = useRouter();
