@@ -1,11 +1,10 @@
 {
-  "name": "uberCloneIonic",
+  "name": "wuberAppIonic",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@capacitor/app": "1.1.1",
     "@capacitor/core": "3.6.0",
-    "@capacitor/geolocation": "^5.0.7",
     "@capacitor/haptics": "1.1.4",
     "@capacitor/keyboard": "1.2.3",
     "@capacitor/status-bar": "1.0.8",
@@ -72,9 +71,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@capacitor/cli": "3.6.0",
-    "@types/mapbox-gl": "^2.7.20"
+    "@capacitor/cli": "3.6.0"
   },
-  "description": "UberClone Ionic project"
+  "description": "An Ionic project"
 }
