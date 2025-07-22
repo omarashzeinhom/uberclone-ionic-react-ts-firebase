@@ -21,7 +21,7 @@
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
     "and": "^0.0.3",
-    "firebase": "^9.8.4",
+    "firebase": "^10.9.0",
     "ionic": "^5.4.16",
     "ionicons": "^5.4.0",
     "mapbox-gl": "^2.9.0",
